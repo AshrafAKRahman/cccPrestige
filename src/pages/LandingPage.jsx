@@ -1,8 +1,10 @@
-import Banner from "@/components/banner";
+import Banner from "@/components/banner/Banner";
+import Navbar from "@/components/navbar/Navbar";
 
 const LandingPage = () => {
   return (
     <div>
+      <Navbar />
       <Banner />
     </div>
   );
