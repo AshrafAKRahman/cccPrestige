@@ -1,7 +1,13 @@
-import "@/styles/globals.css";
+import CustomCursor from "@/components/cursor/CustomCursor";
+import "../styles/globals.css";
 
-const MyApp = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
-};
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <CustomCursor />
+      <Component {...pageProps} />
+    </>
+  );
+}
 
 export default MyApp;

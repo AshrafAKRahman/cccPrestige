@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div>
       <LargeText
-        titleClassName="text-5xl text-bold pb-40"
+        titleClassName="text-5xl text-bold pb-40 z-50"
         title="Providing a first class service for over 15 years"
       />
 

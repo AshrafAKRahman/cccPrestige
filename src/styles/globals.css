@@ -28,3 +28,6 @@ body {
 .videoContainer {
   background: rgba(19, 19, 19, 0.5);
 }
+body {
+  cursor: none;
+}
