@@ -3,7 +3,7 @@ import LargeText from "../text/LargeText";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="relative">
       <LargeText
         titleClassName="text-5xl text-bold pb-40 z-50"
         title="Providing a first class service for over 15 years"
@@ -32,11 +32,11 @@ const Banner = () => {
           muted
         />
       </div>
-      <div className="z-50">
+      <div className="absolute mt-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
         <LargeButton
+          text="Book now"
           href="/Properties"
-          text="Book Now"
-          className="w-44 h-6 text-lg md:w-64 md:h-12 md:text-xl lg:w-72 lg:h-16 lg:text-2xl text-green-600 font-bold transform hover:scale-110 transition-transform rounded"
+          className="bg-blue-200"
         />
       </div>
     </div>
