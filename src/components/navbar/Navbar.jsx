@@ -18,7 +18,7 @@ const Navbar = () => {
         <LargeButton
           text="Properties"
           href="/Properties"
-          className="bg-black text-white shadow-2xl"
+          className="bg-black text-white shadow-xl shadow-black/20 dark:shadow-black/40"
         />
       </div>
     </nav>
