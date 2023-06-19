@@ -1,9 +1,9 @@
+// // import React, { useEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import Banner from "@/components/banner/Banner";
+// import LargeButton from "@/components/buttons/LargeButton";
+// import LargeText from "@/components/text/LargeText";
 // import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import Banner from "@/components/banner/Banner";
-import LargeButton from "@/components/buttons/LargeButton";
-import LargeText from "@/components/text/LargeText";
-import React, { useEffect, useRef } from "react";
 
 // const LandingPage = (props) => {
 //   const boxA = useRef(null);
@@ -83,39 +83,63 @@ import React, { useEffect, useRef } from "react";
 // };
 
 // export default LandingPage;
-const LandingPage = (props) => {
+import React, { useEffect, useRef } from "react";
+import { gsap, Power2 } from "gsap";
+import Banner from "@/components/banner/Banner";
+import LargeButton from "@/components/buttons/LargeButton";
+import LargeText from "@/components/text/LargeText";
+
+const LandingPage = () => {
   const boxes = useRef([null, null, null]);
   const currentIndex = useRef(0);
+  const scrollDistance = useRef(0);
+  const scrollThreshold = 300; // Adjust this value as needed
 
   const handleScroll = (event) => {
     const deltaY = event.deltaY;
 
-    if (deltaY > 0) {
-      // Scrolling down
-      if (currentIndex.current < boxes.current.length - 1) {
-        gsap.to(boxes.current[currentIndex.current], {
-          opacity: 0,
-          visibility: "hidden",
-        });
-        currentIndex.current += 1;
-        gsap.to(boxes.current[currentIndex.current], {
-          opacity: 1,
-          visibility: "visible",
-        });
+    // Accumulate scroll distance
+    scrollDistance.current += Math.abs(deltaY);
+
+    if (scrollDistance.current >= scrollThreshold) {
+      if (deltaY > 0) {
+        // Scrolling down
+        if (currentIndex.current < boxes.current.length - 1) {
+          gsap.to(boxes.current[currentIndex.current], {
+            opacity: 0,
+            visibility: "hidden",
+            duration: 0.5,
+            ease: Power2.easeOut,
+          });
+          currentIndex.current += 1;
+          gsap.to(boxes.current[currentIndex.current], {
+            opacity: 1,
+            visibility: "visible",
+            duration: 0.5,
+            ease: Power2.easeIn,
+          });
+        }
+      } else if (deltaY < 0) {
+        // Scrolling up
+        if (currentIndex.current > 0) {
+          gsap.to(boxes.current[currentIndex.current], {
+            opacity: 0,
+            visibility: "hidden",
+            duration: 0.5,
+            ease: Power2.easeOut,
+          });
+          currentIndex.current -= 1;
+          gsap.to(boxes.current[currentIndex.current], {
+            opacity: 1,
+            visibility: "visible",
+            duration: 0.5,
+            ease: Power2.easeIn,
+          });
+        }
       }
-    } else if (deltaY < 0) {
-      // Scrolling up
-      if (currentIndex.current > 0) {
-        gsap.to(boxes.current[currentIndex.current], {
-          opacity: 0,
-          visibility: "hidden",
-        });
-        currentIndex.current -= 1;
-        gsap.to(boxes.current[currentIndex.current], {
-          opacity: 1,
-          visibility: "visible",
-        });
-      }
+
+      // Reset scroll distance
+      scrollDistance.current = 0;
     }
   };
 
