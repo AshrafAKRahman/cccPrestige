@@ -70,7 +70,7 @@ const LandingPage = () => {
     <div className="relative">
       <Banner />
 
-      <div className="absolute pb-10">
+      <div className="absolute top-1/4 text-center">
         <div
           ref={(el) => (boxes.current[0] = el)}
           className="boxA"
