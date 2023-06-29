@@ -3,8 +3,8 @@ import LargeButton from "../buttons/LargeButton";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between w-full bg-white">
-      <div className="flex justify-start w=1/3 ml-10">
+    <nav className="flex items-center justify-between w-full h-30 bg-white sticky top-0">
+      <div className="flex justify-start ml-10">
         <LargeButton
           text="Vehicles"
           href="/Vehicles"
@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="flex justify-center w=1/3">
         <Image src="/logo.jpg" alt="Logo" height={10} width={200} />
       </div>
-      <div className="flex justify-end w=1/3 mr-10">
+      <div className="flex justify-end mr-10">
         <LargeButton
           text="Properties"
           href="/Properties"
