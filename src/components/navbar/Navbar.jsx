@@ -3,7 +3,7 @@ import LargeButton from "../buttons/LargeButton";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between w-full h-30 bg-white sticky top-0">
+    <nav className=" flex items-center justify-between w-full h-30 bg-white sticky top-0">
       <div className="flex justify-start ml-10">
         <LargeButton
           text="Vehicles"
