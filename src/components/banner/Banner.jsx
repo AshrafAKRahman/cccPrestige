@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="opacity-50 mt-20 flex justify-around items-center">
+    <div className=" mt-20 flex justify-around items-center ">
       <video
         className="w-30 h-80 rounded pr-1"
         src="/chauffer-guy.mp4"
